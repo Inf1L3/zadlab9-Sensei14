@@ -7,8 +7,10 @@ package pl.edu.ur.oopl9;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  *
@@ -47,14 +49,41 @@ public class Main {
 //       a.show();
         
 
-        ArrayList<Auto> list1 = new ArrayList<Auto>();
-        
-        list1.add(new Auto("Volvo", 10000, 150, "v40"));
-        list1.add(new Auto("Opel", 15000, 220, "Astra"));
+//        ArrayList<Auto> list1 = new ArrayList<Auto>();
+//        
+//        list1.add(new Auto("Volvo", 10000, 150, "v40"));
+//        list1.add(new Auto("Opel", 15000, 220, "Astra"));
+//
+//        for (int i = 0; i < list1.size(); i++) {
+//            System.out.println(list1.get(i).toString());
+//        }
 
-        for (int i = 0; i < list1.size(); i++) {
-            System.out.println(list1.get(i).toString());
-        }
+
+
+            //Zadanie 4
+            
+            Scanner odczyt = new Scanner(System.in);
+            
+            HashMap<String, String> map = new HashMap<>(20);
+           Slownik s1 = new Slownik();
+           
+           s1.setMap(map);
+           String x = " ";
+           while(!x.equals("koniec"))
+           {
+               
+               System.out.println("Podaj słowo: \n Aby zakończyć działanie programu wpisz 'koniec'");
+               x = odczyt.nextLine();
+               
+              if(!map.containsKey(x))
+              {
+                  System.out.println("Błędne słowo!");
+              }
+              else
+                   System.out.println(map.get(x));
+               
+           } 
+           
         
     }
 
